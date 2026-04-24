@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Assign Role";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<div class="Account-container">
+    <div class="account-box">
+        <h2 class="text-center mb-4">Assign Role</h2>
+<form method="post" asp-action="AssignRole">
+    <input name="email" placeholder="User Email" class="form-control" />
+
+    <select name="role" class="form-control mt-2">
+        <option>User</option>
+        <option>Admin</option>
+    </select>
+
+    <button class="btn btn-success mt-2">Assign Role</button>
+</form>
+</div>
+</div>

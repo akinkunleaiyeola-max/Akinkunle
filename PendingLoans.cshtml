@@ -1,0 +1,38 @@
+﻿@model List<ATMPOSONLINE.Models.Loan>
+
+@{
+    ViewData["Title"] = "PendingLoans";
+}
+
+<h2>Pending Loan Requests</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Account Number</th>
+            <th>Amount</th>
+            <th>Repayment</th>
+            <th>Date</th>
+            <th>Action</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var loan in Model)
+        {
+            <tr>
+                <td>@loan.FullName</td>
+                <td>@loan.AccountNumber</td>
+                <td>₦@loan.Amount</td>
+                <td>₦@loan.TotalRepayment</td>
+                <td>@loan.DateApplied</td>
+                <td>@loan.Status</td>
+                <td>
+                    <a asp-action="ApproveLoanConfirm"  asp-route-id="@loan.Id" class="btn btn-success btn-sm">Approve</a>
+                    <a asp-action="RejectLoan" asp-route-id="@loan.Id" class="btn btn-danger btn-sm">Reject</a>
+                </td>
+            </tr>
+            }
+    </tbody>
+</table>

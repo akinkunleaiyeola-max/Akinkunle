@@ -1,0 +1,51 @@
+﻿@using ATMPOSONLINE.ViewModels;
+@model RegisterViewModel;
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<div class="Account-container">
+    <div class="account-box">
+        <h2 class="text-center mb-3">Create an account</h2>
+        <p class="text-center text-muted mb-4">Join our e-channel to securely manage your transactions</p>
+
+        <form asp-action="Register" method="post" class="form-card">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-2"></div>
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Full name</label>
+                <input asp-for="Name" class="form-control form-control-lg" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control form-control-lg" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label">Password</label>
+                <input asp-for="Password" type="password" class="form-control form-control-lg" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ConfirmPassword" class="form-label">Confirm password</label>
+                <input asp-for="ConfirmPassword" type="password" class="form-control form-control-lg" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ATMPIN" class="form-label">4-digit ATM PIN</label>
+                <input asp-for="ATMPIN" maxlength="4" class="form-control form-control-lg" />
+                <span asp-validation-for="ATMPIN" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 btn-lg">Create account</button>
+            <p class="text-center mt-3 small text-muted">
+                Already have an account? <a asp-controller="Account" asp-action="Login">Sign in</a>
+            </p>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-secondary w-100 mt-2">Back</a>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

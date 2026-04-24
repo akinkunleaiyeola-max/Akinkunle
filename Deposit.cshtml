@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Transaction Page";
+
+}
+<div class="d-flex justify-content-lg-start gap-3 mt-4">
+    @if (User.Identity != null && User.Identity.IsAuthenticated)
+    {
+        <h6>Welcome, @User.Identity.Name</h6>
+    }
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            Our Services
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" asp-controller="Home" asp-action="Money Deposit">Money Deposit</a></li>
+            <li><a class="dropdown-item" asp-controller="Home" asp-action="Money Transfer">Money Transfer</a></li>
+            <li><a class="dropdown-item" asp-controller="Home" asp-action="Pay Bills">Pay Bills</a></li>
+            <li><a class="dropdown-item" asp-controller="Home" asp-action="Apply for Loan">Apply for Loan</a></li>
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            About Us
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" asp-controller="Home" asp-action="We are a FinTech">We are a FinTech</a></li>
+            <li><a class="dropdown-item" asp-controller="Home" asp-action="What we do as a service">What we do as a service</a></li>
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            Our Clients
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" asp-controller="Home" asp-action="Banks">Banks</a></li>
+            <li><a class="dropdown-item" asp-controller="Home" asp-action="Private Institutions">Private Institutions</a></li>
+            <li><a class="dropdown-item" asp-controller="Home" asp-action="Private Individual">Private Individual</a></li>
+            <li><a class="dropdown-item" asp-controller="Home" asp-action="Public Individual">Public Individual</a></li>
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            Company Profile
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" asp-controller="My Account" asp-action="What we are capable of doing">What we are capable of doing</a></li>
+
+        </ul>
+    </div>
+</div>
+<br />
+<div class="Deposit text-center" style="color:green;">
+
+    <h1 class="display-4">Welcome to our E-transact channel</h1>
+
+    <p class="lead">
+        We are one of Nigeria's fastest growing FinTech.<br />
+        We garantee safe and secured transactions.
+    </p>
+    <a asp-controller="Account" asp-action="Register" class="btn btn-primary btn-lg">You can register on our platform by clicking the button</a>
+</div>
+
+

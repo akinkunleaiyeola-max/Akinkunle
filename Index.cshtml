@@ -1,0 +1,118 @@
+﻿@model ATMPOSONLINE.Models.ATMONLINE
+@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="hero py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1 class="display-7 fw-bold">Welcome to E-Payment System</h1>
+                <p class="lead text-muted">Fast, secure and reliable digital transactions — deposits, transfers, withdrawals and loans all in one place.</p>
+
+                <div class="d-flex gap-2 flex-wrap mt-3">
+                    <a asp-controller="Account" asp-action="Login" class="btn btn-primary btn-lg" role="button" aria-label="Deposit">💰 Deposit</a>
+                    <a asp-controller="Account" asp-action="Login" class="btn btn-outline-primary btn-lg" role="button" aria-label="Transfer">🔁 Transfer</a>
+                    <a asp-controller="Account" asp-action="Login" class="btn btn-outline-secondary btn-lg" role="button" aria-label="Withdraw">🏧 Withdraw</a>
+                    <a asp-controller="Account" asp-action="Login" class="btn btn-outline-secondary btn-lg" role="button" aria-label="Loan">🏦 Loan</a>
+                </div>
+
+                <p class="mt-4 text-muted small">Need help? Call support: <strong>+234 805 541 0247</strong> or email <a href="mailto:inquiry@e-platformtech.com">inquiry@e-platformtech.com</a></p>
+            </div>
+
+            <div class="col-lg-5 d-none d-lg-block">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center py-5">
+                        <h5 class="card-title">Quick Actions</h5>
+                        <p class="text-muted">Jump directly to a transaction</p>
+                        <div class="d-grid gap-2">
+                            <a asp-controller="Account" asp-action="Login" class="btn btn-success">💵 Deposit Money</a>
+                            <a asp-controller="Account" asp-action="Login" class="btn btn-primary">➡️ Transfer Money</a>
+                            <a asp-controller="Account" asp-action="Login" class="btn btn-warning">🏧 Withdraw Cash</a>
+                            <a asp-controller="Account" asp-action="Login" class="btn btn-outline-info">🏦 Apply for Loan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services py-5">
+    <div class="container">
+        <h3 class="mb-4 text-center">Our Services</h3>
+        <div class="row g-3">
+            <div class="col-sm-6 col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-2 fs-2">💳</div>
+                        <h5 class="card-title">Deposits</h5>
+                        <p class="card-text text-muted">Top up accounts quickly and securely.</p>
+                        <a asp-controller="Account" asp-action="Login" class="stretched-link" aria-label="Go to deposit"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-2 fs-2">🔁</div>
+                        <h5 class="card-title">Transfers</h5>
+                        <p class="card-text text-muted">Send money to any account with confidence.</p>
+                        <a asp-controller="Account" asp-action="Login" class="stretched-link" aria-label="Go to transfer"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-2 fs-2">🏧</div>
+                        <h5 class="card-title">Withdrawals</h5>
+                        <p class="card-text text-muted">Secure cash withdrawals from our network.</p>
+                        <a asp-controller="Account" asp-action="Login" class="stretched-link" aria-label="Go to withdraw"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-2 fs-2">🏦</div>
+                        <h5 class="card-title">Loans</h5>
+                        <p class="card-text text-muted">Apply and track loan requests with ease.</p>
+                        <a asp-controller="Account" asp-action="Login" class="stretched-link" aria-label="Go to loans"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-2 fs-2">📜</div>
+                        <h5 class="card-title">History</h5>
+                        <p class="card-text text-muted">View your recent transactions and statements.</p>
+                        <a asp-controller="Account" asp-action="Login" class="stretched-link" aria-label="Go to history"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-2 fs-2">📞</div>
+                        <h5 class="card-title">Consultation</h5>
+                        <p class="card-text text-muted">Contact our Consultation team to inquiry our service.</p>
+                        <a href="mailto:inquiry@e-platformtech.com" class="stretched-link" aria-label="Payment System Consultation"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta py-5 bg-primary text-white text-center">
+    <div class="container">
+        <h4 class="mb-2">Get started with E-Transact today</h4>
+        <p class="mb-3">Open an account to enjoy seamless digital transactions.</p>
+        <a asp-controller="Account" asp-action="Register" class="btn btn-light btn-lg" role="button">Create an Account</a>
+    </div>
+</section>
