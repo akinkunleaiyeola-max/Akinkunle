@@ -1,0 +1,28 @@
+﻿@model ATMPOSONLINE.ViewModels.LoanViewModel
+
+
+
+<h2 class="text-center">Confirm Loan Application</h2>
+
+<div class="card p-4 shadow">
+    <p><strong>Full Name:</strong> @Model.FullName</p>
+    <p><strong>Account Number:</strong> @Model.AccountNumber</p>
+    <p><strong>Loan Amount:</strong> ₦@Model.Amount</p>
+    <p><strong>Interest (10%):</strong> ₦@(Model.Amount * 0.1M)</p>
+    <p><strong>Total Repayment:</strong> ₦@Model.TotalRepayment</p>
+</div>
+<form method="post" asp-action="ConfirmLoan">
+    <input type="hidden" asp-for="Amount" />
+    <input type="hidden" asp-for="InterestRate" />
+    <input type="hidden" asp-for="TotalRepayment" />
+
+    <button type="submit" class="btn btn-success w-100 mt-3">
+        ✅ Confirm & Submit
+    </button>
+    <div class="text-center">
+        <a asp-controller="Transactions" asp-action="ApplyLoan" class="btn btn-secondary w-100 mt-2">Back</a>
+    </div>
+</form>
+<a asp-action="ApplyLoan" class="btn btn-secondary w-100 mt-2">
+    ❌ Cancel
+</a>
